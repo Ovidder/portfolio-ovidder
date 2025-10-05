@@ -1,295 +1,232 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saite_finale_16_12</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oksana Mishchenko – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1C2833;
+      color: #FAF3E0;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0F1B24, #1C2833);
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #B87333;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      color: #ddd;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      color: #FAF3E0;
+    }
+
+    .contact-info i {
+      color: #B87333;
+      margin-right: 0.4rem;
+    }
+
+    .contact-info a {
+      color: #B87333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 3rem 1rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #B87333;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      position: relative;
+      border: 2px solid #B87333;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0F1B24;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(28, 40, 51, 0.9);
+      color: #B87333;
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .overlay {
+      transform: translateY(0%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #B87333;
+    }
+
+    footer a {
+      color: #B87333;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    footer a:hover {
+      color: #FAF3E0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .tagline {
+        font-size: 1rem;
+      }
+
+      .contact-info {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио Галерея</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Подключение FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #FAF3E0;
-            background-color: #1C2833;
-        }
+  <!-- Шапка -->
+  <header class="hero">
+    <h1>Oksana Mishchenko</h1>
+    <p class="tagline">
+      Creative and detail-oriented graphic designer with over 6 years of experience in social media content, video editing, and motion design. I specialize in crafting compelling visual storytelling for the e-commerce space — with fresh, platform-optimized design.
+    </p>
 
-        header {
-            background: linear-gradient(135deg, #1C2833, #0F1B24);
-            text-align: center;
-            padding: 4rem 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            left: -10%;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(184, 115, 51, 0.3), transparent 70%);
-            animation: rotateBackground 15s infinite linear;
-            z-index: 0;
-        }
-
-        @keyframes rotateBackground {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        header h1 {
-            font-size: 4rem;
-            color: #B87333;
-            font-weight: bold;
-            position: relative;
-            z-index: 1;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            color: #FAF3E0;
-            position: relative;
-            z-index: 1;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
-            margin: 0;
-        }
-
-        header nav ul li a {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid #B87333;
-            color: #B87333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            background-color: #B87333;
-            color: #FAF3E0;
-            box-shadow: 0 4px 8px rgba(184, 115, 51, 0.5);
-            transform: translateY(-3px);
-        }
-
-        section {
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #B87333;
-        }
-
-        /* Секция 1: Видео */
-        .gallery-track {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 0.8rem;
-            padding: 1rem;
-            justify-items: center;
-        }
-
-        .card {
-            position: relative;
-            background: #0F1B24;
-            border: 2px solid #B87333;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-            width: 100%;
-            max-width: 450px;
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .card iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Секции 2 и 3 */
-        .gallery-track-original {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            padding: 1.5rem;
-        }
-
-        .card-original {
-            position: relative;
-            background: #0F1B24;
-            border: 2px solid #B87333;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-            overflow: hidden;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .card-original:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(184, 115, 51, 0.5);
-        }
-
-        .card-original img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        .card-original:hover img {
-            opacity: 0.8;
-        }
-
-        footer {
-            background: #0F1B24;
-            color: #FAF3E0;
-            text-align: center;
-            padding: 2rem;
-            border-top: 2px solid #B87333;
-        }
-
-        footer a {
-            color: #B87333;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #FAF3E0;
-            transform: scale(1.2);
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>OKSANA MISHCHENKO</h1>
-        <p>Kreativer und erfahrener Videoeditor und Mediendesigner | Über 6 Jahre Erfahrung in Videoproduktion, Storytelling und UX-Design</p>
-        <nav>
-            <ul>
-                <li><a href="#projects">Projekte</a></li>
-                <li><a href="#typography">Typografie</a></li>
-                <li><a href="#social">Soziale Plattformen</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Секция 1: Видео -->
-<section id="projects">
-    <h2>Individuelle Videolösungen</h2>
-    <div class="gallery-track">
-     <div class="card"><iframe src="https://www.youtube.com/embed/GtxSYMVi8BE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/rq95Eme5tb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/FZfxxb-w4H8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/XfIN8EzolM0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/t4ugL7Vqr18" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/3wqdxZZmafY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/Muk8S1Xalpc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/xscfTrGJa44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/d4Bt2SXBIP4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/Z5xZQ_fZ14o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/gutOjoMUBGg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/hc_OMlwQ2VI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/1rwLvv2o2z4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/3f__3lUkt_o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/_iJ-eZTPSeY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="card"><iframe src="https://www.youtube.com/embed/fEoLtIOtGo0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="card"><iframe src="https://www.youtube.com/embed/WkMINDpSoR4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="card"><iframe src="https://www.youtube.com/embed/Dg3hjfLRY1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-       <div class="card"><iframe src="https://www.youtube.com/embed/isjMKo8Okgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-     <div class="card"><iframe src="https://www.youtube.com/embed/Zae8NZIWVoc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="contact-info">
+      <div><i class="fas fa-map-marker-alt"></i> Schwandorf, Germany &nbsp;|&nbsp; Ready to relocate</div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:ovidder@gmail.com">ovidder@gmail.com</a>
+        &nbsp;&nbsp;
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+4915121613467">+49 151 21613467</a>
+      </div>
     </div>
-</section>
+  </header>
 
-
-    <section id="typography">
-    <h2>Typography</h2>
-    <div class="gallery-track-original">
-        <div class="card-original">
-            <img src="https://i.ibb.co/Z1FBZjV/Blue-Eye.png" alt="Работа 1">
-        </div>
-        <div class="card-original">
-            <img src="https://i.ibb.co/q13mm9d/Pinterest-Pin-MISTO.jpg" alt="Работа 2">
-        </div>
-        <div class="card-original">
-            <img src="https://i.ibb.co/9sfcv47/2.png" alt="Работа 6">
-        </div>
-        <div class="card-original">
-            <img src="https://i.ibb.co/GsvsG7M/4.png" alt="Работа 7">
-        </div>
+  <!-- Категория: AI Art -->
+  <section id="ai-art">
+    <h2>AI Art</h2>
+    <div class="gallery">
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/jS4ctD0k/DALL-E-2024-02-05-14-03-11-Create-a-charming-image-for-Valentine-039-s-Day-featuring-a-cute-cherubic.webp" alt="AI Art">
+        <div class="overlay">🧠 Created with AI</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/zGr7sn6m/DALL-E-2024-02-10-15-04-33-futuristic-cityscape-with-neon-lights-and-dark-alleys-two-teenage-boys.webp" alt="AI Art">
+        <div class="overlay">🧠 Created with AI</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/kgms0xZN/DALL-E-2024-03-02-12-20-08-Create-a-classical-painting-of-the-archangel-Gabriel-in-a-serene-interi.webp" alt="AI Art">
+        <div class="overlay">🧠 Created with AI</div>
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- Категория: GIF Animations -->
+  <section id="gifs">
+    <h2>GIF Animations</h2>
+    <div class="gallery">
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/wBmpnBH7/Angel.gif" alt="GIF">
+        <div class="overlay">Looping Animation</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/q73TW706/crossfeeling-banners.gif" alt="GIF">
+        <div class="overlay">CrossFeeling Banners</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/t4L0dHPH/CYBER.gif" alt="GIF">
+        <div class="overlay">Cyber Vibe</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Категория: Graphic Design -->
+  <section id="graphic-design">
+    <h2>Graphic Design</h2>
+    <div class="gallery">
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/y85KfZMy/Beige-Minimal-Creative-Portfolio-Presentation.jpg" alt="Design">
+        <div class="overlay">Minimal Presentation</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/BvZg6JJN/dream-Trading-Card-3.jpg" alt="Design">
+        <div class="overlay">Trading Card Concept</div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="https://i.postimg.cc/xdjRC996/dream-Trading-Card-2.jpg" alt="Design">
+        <div class="overlay">Fantasy Illustration</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Секция 3 -->
-    <section id="social">
-        <h2>Soziale Plattformen</h2>
-        <div class="gallery-track-original">
-            <div class="card-original">
-                <img src="https://images.unsplash.com/photo-1535478044878-3ed83d5456ef?q=80&w=2382&auto=format&fit=crop" alt="Соцсети 1">
-            </div>
-        </div>
-    </section>
+  <!-- Футер -->
+  <footer>
+    <p>&copy; 2025 Oksana Mishchenko. All rights reserved.</p>
+    <div>
+      <a href="https://www.instagram.com/ovidder" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2024 OKSANA MISHCHENKO. Alle Rechte vorbehalten.</p>
-        <div>
-            <a href="https://www.facebook.com/Ovidder" target="_blank">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/ovidder/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-        </div>
-    </footer>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
